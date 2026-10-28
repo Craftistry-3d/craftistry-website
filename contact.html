@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a quote | Craftistry</title>
+<meta name="description" content="Tell Craftistry your idea and get a quote for custom 3D printed gifts and products. Call, WhatsApp or email us.">
+<meta name="theme-color" content="#f6b900">
+<meta property="og:title" content="Get a quote | Craftistry">
+<meta property="og:description" content="Tell Craftistry your idea and get a quote for custom 3D printed gifts and products. Call, WhatsApp or email us.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo/profile-picture-yellow.png">
+<link rel="icon" type="image/png" href="assets/logo/profile-picture-yellow.png">
+<link rel="apple-touch-icon" href="assets/logo/profile-picture-yellow.png">
+<link rel="preload" href="assets/fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/site.css">
+<noscript><style>.nav-toggle{display:none}.site-nav{display:block;padding-bottom:16px}</style></noscript>
+<script src="js/icons.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="assets/logo/craftistry-logo-primary.svg" alt="Craftistry home" width="176" height="57"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span data-icon="menu" data-size="24"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="occasions.html">Occasions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a class="cr-btn cr-btn-primary" href="contact.html">Get a quote</a></div>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div>
+          <p class="cr-eyebrow">Contact</p>
+          <h1 class="display">Tell us your idea. We'll bring it to life!</h1>
+        </div>
+        <div>
+          <p class="lead">Share as much or as little as you know. We'll come back with colours, personalisation options and a quote.</p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="page-hero-band" aria-hidden="true"></div>
+  </section>
+
+  <section class="section" style="padding-top: var(--space-4)">
+    <div class="container contact-grid">
+      <div class="cr-card cr-card-framed">
+        <h2 class="h2">Request a quote</h2>
+        <p class="muted" style="margin-bottom: var(--space-3)">Fields marked optional can be left blank.</p>
+        <form id="quote-form" class="quote-form" novalidate>
+          <div class="form-row">
+            <div class="cr-field">
+              <label class="cr-label" for="f-name">Your name</label>
+              <input class="cr-input" id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="cr-field">
+              <label class="cr-label" for="f-email">Email</label>
+              <input class="cr-input" id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="cr-field">
+              <label class="cr-label" for="f-phone">Phone or WhatsApp <span class="optional">(optional)</span></label>
+              <input class="cr-input" id="f-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="cr-field">
+              <label class="cr-label" for="f-occasion">Occasion <span class="optional">(optional)</span></label>
+              <select class="cr-input" id="f-occasion" name="occasion">
+                <option value="">Choose an occasion</option>
+                <option value="birthday">Birthday</option>
+                <option value="wedding">Wedding</option>
+                <option value="sports">Sporting event</option>
+                <option value="school">School project</option>
+                <option value="corporate">Corporate gifting</option>
+                <option value="get-together">Get-together</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="cr-field">
+              <label class="cr-label" for="f-quantity">How many pieces? <span class="optional">(optional)</span></label>
+              <input class="cr-input" id="f-quantity" name="quantity" type="text" inputmode="numeric" placeholder="For example, 25">
+            </div>
+            <div class="cr-field">
+              <label class="cr-label" for="f-date">Needed by <span class="optional">(optional)</span></label>
+              <input class="cr-input" id="f-date" name="date" type="date">
+            </div>
+          </div>
+          <div class="cr-field">
+            <label class="cr-label" for="f-budget">Budget <span class="optional">(optional)</span></label>
+            <input class="cr-input" id="f-budget" name="budget" type="text" placeholder="For example, ₹300 per piece">
+          </div>
+          <div class="cr-field">
+            <label class="cr-label" for="f-idea">Your idea</label>
+            <textarea class="cr-input" id="f-idea" name="idea" rows="5" required aria-describedby="f-idea-hint" placeholder="What would you like us to make? Colours, names or logos, sizes, anything that helps."></textarea>
+            <p class="cr-field-msg" id="f-idea-hint">Have sketches or reference photos? Attach them to the email that opens next.</p>
+          </div>
+          <div class="btn-row">
+            <button class="cr-btn cr-btn-primary cr-btn-lg" type="submit"><span>Send my request</span><span data-icon="arrow-right" data-size="22"></span></button>
+            <button class="cr-btn cr-btn-secondary cr-btn-lg" type="button" id="whatsapp-btn"><span data-icon="chat" data-size="22"></span><span>Send on WhatsApp</span></button>
+          </div>
+          <p id="form-status" class="form-status cr-field-msg" role="status" tabindex="-1"><span data-icon="check" data-size="16"></span><span>Your email app should open with your request filled in. Just press send! If nothing opened, email us at <a href="mailto:info.craftistry@gmail.com">info.craftistry@gmail.com</a>.</span></p>
+        </form>
+      </div>
+
+      <aside class="contact-aside" style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div class="cr-card cr-card-yellow">
+          <h2 class="cr-card-title">Talk to us directly</h2>
+          <ul class="contact-list" style="margin-top: var(--space-2)">
+            <li><a href="tel:+918143013030"><span data-icon="phone" data-size="20"></span>+91 81430 13030</a></li>
+            <li><a href="https://wa.me/918143013030" rel="noopener"><span data-icon="chat" data-size="20"></span>WhatsApp us</a></li>
+            <li><a href="mailto:info.craftistry@gmail.com"><span data-icon="mail" data-size="20"></span>info.craftistry@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/craftistry.3d/" rel="noopener"><span data-icon="heart" data-size="20"></span>@craftistry.3d</a></li>
+          </ul>
+        </div>
+        <div class="cr-card cr-card-paper">
+          <h2 class="cr-card-title">What happens next</h2>
+          <ol class="steps-mini" style="margin-top: var(--space-2)">
+            <li><span>We read your idea and ask anything we need to know.</span></li>
+            <li><span>We send you colour and personalisation options with a quote.</span></li>
+            <li><span>Once you're happy, we print, finish and deliver.</span></li>
+          </ol>
+          <p class="small muted" style="margin-top: var(--space-3)">No minimum order. Prices are per piece and include 18% GST.</p>
+          <p style="margin-top: var(--space-3); font-weight: 600">With love &amp; gratitude, Craftistry</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo/craftistry-logo-dark.svg" alt="Craftistry" width="180" height="50">
+        <p>A creative playground where ideas are designed, 3D printed and finished by hand. Premium, but never pretentious.</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-list">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="occasions.html">Occasions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Get a quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-title">Occasions</h2>
+        <ul class="footer-list">
+          <li><a href="occasions.html#birthdays">Birthdays</a></li>
+          <li><a href="occasions.html#weddings">Weddings</a></li>
+          <li><a href="occasions.html#sports">Sporting events</a></li>
+          <li><a href="occasions.html#school">School projects</a></li>
+          <li><a href="occasions.html#corporate">Corporate gifting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-title">Say hello</h2>
+        <ul class="footer-list">
+          <li><a href="tel:+918143013030"><span data-icon="phone" data-size="20"></span>+91 81430 13030</a></li>
+          <li><a href="mailto:info.craftistry@gmail.com"><span data-icon="mail" data-size="20"></span>info.craftistry@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/craftistry.3d/" rel="noopener"><span data-icon="heart" data-size="20"></span>@craftistry.3d on Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom small">
+      <p>&copy; <span data-year>2026</span> Craftistry. With love &amp; gratitude.</p>
+      <p>Prices per piece in INR, incl. 18% GST.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

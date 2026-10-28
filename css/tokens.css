@@ -1,0 +1,41 @@
+/* Craftistry design tokens — generated from the Craftistry design system's tokens.json. Edit there, not here. */
+
+@font-face { font-family: "League Spartan"; src: url("../assets/fonts/LeagueSpartan-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "League Spartan"; src: url("../assets/fonts/LeagueSpartan-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "League Spartan"; src: url("../assets/fonts/LeagueSpartan-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  --brand-yellow: #f6b900;
+  --on-yellow: #000000;
+  --ink: #000000;
+  --ink-muted: #555555;
+  --surface: #ffffff;
+  --surface-alt: #f7f3ea;
+  --frame: #000000;
+  --hairline: #e2dccf;
+  --focus: #000000;
+  --danger: #b3261e;
+  --violet: #7b2cff;
+  --violet-deep: #4a14b8;
+  --violet-100: #efe6ff;
+  --magenta: #ff2e88;
+  --cyan: #00c2ff;
+  --yellow-100: #fff3cc;
+  --on-violet: #ffffff;
+  --on-magenta: #000000;
+  --on-cyan: #000000;
+  --font-display: "League Spartan", "Arial Black", system-ui, sans-serif;
+  --font-sans: "League Spartan", system-ui, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 72px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --border-frame: 3px;
+  --border-hairline: 1px;
+}
