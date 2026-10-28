@@ -10,7 +10,14 @@ Open `index.html` directly, or serve the folder so links and fonts behave as the
 python3 -m http.server 8000
 ```
 
-Deploy by uploading the folder as-is to any static host (GitHub Pages, Netlify, Cloudflare Pages).
+## Deploy
+
+The live site is **https://craftistry.in**, served by GitHub Pages from the root of the `main` branch of `Craftistry-3d/craftistry-website`. Merging to `main` publishes within a few minutes.
+
+- `CNAME` holds the custom domain (`craftistry.in`). Don't delete or rename it, or Pages drops the domain.
+- `.nojekyll` tells Pages to serve the files as-is, with no Jekyll processing.
+- DNS is managed at GoDaddy: four `A` records on `@` pointing to GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and a `CNAME` record `www` → `craftistry-3d.github.io`.
+- Absolute URLs (the `og:image` meta tag) use `https://craftistry.in`. Update them if the domain changes.
 
 ## Structure
 
