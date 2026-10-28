@@ -265,7 +265,55 @@ p { margin: 0; }
 .shot img { width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--surface); }
 .shot-caption { display: flex; flex-direction: column; gap: 2px; padding: 12px var(--space-3) var(--space-3); }
 .shot-name { font-weight: 700; font-size: 16px; line-height: 20px; }
-.shot-meta { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.shot-price { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 24px; margin-top: var(--space-1); }
+.shot-opts { font-size: 12px; line-height: 16px; margin-top: var(--space-1); }
+.opt-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Catalogue categories on the gallery page */
+.cat-section { margin-top: var(--space-5); scroll-margin-top: 96px; }
+.cat-section[hidden] { display: none; }
+.cat-head { display: flex; flex-direction: column; gap: var(--space-1); max-width: 640px; margin-bottom: var(--space-4); padding-top: var(--space-4); border-top: var(--border-frame) solid var(--frame); }
+.legend { display: flex; flex-direction: column; gap: var(--space-1); margin-top: var(--space-3); padding: var(--space-3); background: var(--surface-alt); border-radius: var(--radius-md); }
+.callout-card {
+  display: flex; flex-direction: column; justify-content: center; gap: var(--space-2);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+}
+.callout-title { font-family: var(--font-display); font-size: 20px; line-height: 24px; font-weight: 700; color: var(--brand-yellow); }
+
+/* "Why 3D prints from Craftistry?" — catalogue page 3 */
+.why-head { display: flex; flex-direction: column; gap: var(--space-2); }
+.why-head .cr-eyebrow { color: var(--ink-muted); }
+.why-intro { max-width: 640px; margin-top: var(--space-3); margin-bottom: var(--space-4); }
+.why-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.why-block { display: flex; gap: var(--space-3); background: var(--surface-alt); border-radius: var(--radius-lg); padding: var(--space-4); }
+.why-num {
+  flex: none; width: 48px; height: 48px; border-radius: var(--radius-pill);
+  background: var(--brand-yellow); color: var(--on-yellow);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 22px;
+}
+.why-body { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.why-points { display: grid; gap: var(--space-3); }
+.why-point-title { font-weight: 700; margin-bottom: 2px; }
+@media (min-width: 640px) {
+  .why-block { gap: var(--space-4); padding: var(--space-5) var(--space-4); }
+  .why-num { width: 56px; height: 56px; font-size: 24px; }
+  .why-points { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+}
+@media (min-width: 960px) {
+  .why-block:nth-child(2) { margin-left: var(--space-6); }
+  .why-block:nth-child(3) { margin-left: calc(var(--space-6) * 2); }
+}
+.care-title { color: var(--brand-yellow); margin-bottom: var(--space-4); }
+.care-grid { display: grid; gap: var(--space-4); }
+@media (min-width: 640px) { .care-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Nine catalogue categories: 3 across from tablet up */
+.grid-cats-3 > :last-child:nth-child(odd) { grid-column: span 2; }
+@media (min-width: 640px) {
+  .grid-cats-3 > :last-child:nth-child(odd) { grid-column: auto; }
+}
+@media (min-width: 960px) { .grid-cats.grid-cats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* Home: featured strip, staggered */
 .featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }

@@ -19,7 +19,7 @@ Deploy by uploading the folder as-is to any static host (GitHub Pages, Netlify, 
 | `index.html` | Home: hero, how we make, categories, occasions, featured work, quote CTA |
 | `services.html` | Services, product categories, ordering steps, FAQ |
 | `occasions.html` | Birthdays, weddings, sporting events, school projects, corporate gifting (anchors `#birthdays`, `#weddings`, `#sports`, `#school`, `#corporate`) |
-| `gallery.html` | Filterable product photo grid with a `<dialog>` lightbox |
+| `gallery.html` | All 135 products from the 2026 catalogue, grouped by its 9 categories, with filters and a `<dialog>` lightbox |
 | `contact.html` | Quote request form plus direct contact details |
 | `css/tokens.css` | Design tokens (colours, type, spacing, radii) and the `@font-face` rules. Generated from the design system's `tokens.json`: change values there first |
 | `css/components.css` | Design-system components (`cr-btn`, `cr-card`, `cr-tag`, `cr-cat`, `cr-field`, `cr-promo`), copied from the design system's `bundle.css` |
@@ -28,7 +28,7 @@ Deploy by uploading the folder as-is to any static host (GitHub Pages, Netlify, 
 | `js/main.js` | Icon rendering, mobile nav, gallery filter and lightbox, quote form |
 | `assets/logo/` | Logo Kit SVGs and the bulb profile picture (used as the favicon) |
 | `assets/fonts/` | League Spartan 400/600/700 woff2 (SIL OFL, licence in `OFL.txt`) |
-| `assets/gallery/` | Product photos from the 2026 product catalogue |
+| `assets/gallery/` | One photo per catalogue product, named from the product name (`cute-crab-pen-holder.jpg`) |
 
 ### Conventions
 
@@ -37,8 +37,8 @@ Deploy by uploading the folder as-is to any static host (GitHub Pages, Netlify, 
 - Use tokens (`var(--brand-yellow)`, `var(--space-4)`, …) and never raw hex values in `site.css`. The one exception is the `.on-dark` block, which holds the design system's dark-theme values for black sections.
 - Keep it dependency-free. No CDNs, no frameworks, no build tools.
 - The quote form has no backend. On submit it validates and opens a prefilled `mailto:` to the studio email; "Send on WhatsApp" opens `wa.me` with the same text. To use a form service later (Formspree, Netlify Forms), change the submit handler in `js/main.js`. `contact.html?occasion=wedding` preselects the occasion (`birthday`, `wedding`, `sports`, `school`, `corporate`, `get-together`, `other`).
-- Gallery items are `<li data-cat="…">` with the keys `desk`, `tech`, `clocks`, `decor`, `coasters`, `toys`, `gifts`, matching the filter buttons' `data-filter`. Product photos are square-cropped with `object-fit: cover`.
-- Don't add licensed-character products (Pokémon, Star Wars, Marvel, DC, Minecraft and the like) to the public gallery, even though some appear in the catalogue.
+- The gallery mirrors the product catalogue exactly: every product, in catalogue order, with its catalogue name, price and its "Colours" and "Custom" availability. Each category is a `<section class="cat-section" id="…" data-cat="…">` whose key matches a filter button's `data-filter`. The keys are `desk`, `tech`, `clocks`, `sculptures`, `decor`, `coasters`, `knitted`, `toys`, `gifts`. Links like `gallery.html#coasters` open on that category. Category descriptions and the black callout cards use the catalogue's wording. When the catalogue changes, update the gallery to match. Product photos are square-cropped with `object-fit: cover`.
+- The "Why 3D prints from Craftistry?" section (home page), the service cards and "Caring for your pieces" (services page) use the wording of page 3 of the catalogue. Keep that wording as written; don't paraphrase it.
 
 ## Brand
 
@@ -51,6 +51,8 @@ The source of truth is the **Craftistry Design System** artifact (https://claude
 - Email: info.craftistry@gmail.com
 - Instagram: @craftistry.3d
 - Prices are per piece in Indian rupees (₹) and include 18% GST. There's no minimum order. Lead time depends on the product and quantity. Photos are for reference; printed colours may vary.
+- Material: plant-based PLA, made from renewable crops like corn and sugarcane. PLA softens above about 55°C. Pieces are not meant for food unless stated.
+- Catalogue: 135 products in 9 categories (desk organisers & office, phone, gaming & tech stands, clocks & calendars, sculptures & display pieces, home decor & planters, coasters, knitted figurines, fidgets, toys & games, keychains & mini gifts).
 - Product categories: art, educational, fashion, hobbies/DIY, household, miniatures, props & cosplay, trophies, tools, toys, games, gifting.
 - Occasions ("curated buckets"): birthdays, weddings, sporting events, school projects, get-togethers, corporate gifting, one-off ideas.
 

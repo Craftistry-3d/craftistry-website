@@ -50,22 +50,30 @@
   });
 
   /* ---------- Gallery filters ---------- */
-  var filterBtns = document.querySelectorAll(".filter-btn");
-  var shots = document.querySelectorAll(".gallery-grid > li");
+  // Each catalogue category is a <section class="cat-section" data-cat="…">; filters show one or all.
+  var filterBtns = document.querySelectorAll(".filter-btn[data-filter]");
+  var catSections = document.querySelectorAll(".cat-section");
   var countEl = document.getElementById("gallery-count");
+  function applyFilter(cat) {
+    var shown = 0;
+    filterBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === cat)); });
+    catSections.forEach(function (sec) {
+      var match = cat === "all" || sec.getAttribute("data-cat") === cat;
+      sec.hidden = !match;
+      if (match) shown += sec.querySelectorAll(".shot").length;
+    });
+    if (countEl) countEl.textContent = "Showing " + shown + (shown === 1 ? " piece" : " pieces");
+  }
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
       var cat = btn.getAttribute("data-filter");
-      var shown = 0;
-      filterBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
-      shots.forEach(function (li) {
-        var match = cat === "all" || li.getAttribute("data-cat") === cat;
-        li.hidden = !match;
-        if (match) shown++;
-      });
-      if (countEl) countEl.textContent = "Showing " + shown + (shown === 1 ? " piece" : " pieces");
+      applyFilter(cat);
+      if (history.replaceState) history.replaceState(null, "", cat === "all" ? location.pathname : "#" + cat);
     });
   });
+  // Links like gallery.html#coasters open on that category
+  var hashCat = location.hash.slice(1);
+  if (hashCat && document.querySelector('.filter-btn[data-filter="' + hashCat + '"]')) applyFilter(hashCat);
 
   /* ---------- Lightbox ---------- */
   var lightbox = document.getElementById("lightbox");
@@ -79,7 +87,11 @@
         lbImg.src = img.src;
         lbImg.alt = img.alt;
         lbName.textContent = btn.querySelector(".shot-name").textContent;
-        lbMeta.textContent = btn.querySelector(".shot-meta").textContent;
+        // "₹85 · Colours: Available · Custom: Not available"
+        var opts = btn.querySelector(".shot-opts").textContent.trim().split(/\s*\n\s*|(?=Custom)/);
+        lbMeta.textContent = [btn.querySelector(".shot-price").textContent].concat(opts.map(function (o) {
+          return o.trim().replace(/^(Colours|Custom)\s+/, "$1: ");
+        })).join(" · ");
         lightbox.showModal();
       });
     });
